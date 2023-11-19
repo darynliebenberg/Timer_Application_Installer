@@ -96,7 +96,7 @@ namespace Timer_Application_Installer
                 Console.WriteLine(e.ToString());
                 Invoke((MethodInvoker)delegate
                 {
-                    ErrorPanel.Show();s
+                    ErrorPanel.Show();
                     Installing.Hide();
                 });
             }               
