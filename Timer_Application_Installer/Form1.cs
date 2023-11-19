@@ -43,16 +43,10 @@ namespace Timer_Application_Installer
             Thread.Sleep(1000);
             Directory.CreateDirectory("C:/Program Files/Timer");
             Update(1);
-            GetFile().Wait();
-            Update(1);
-            Thread.Sleep(1000);
-            Invoke((MethodInvoker)delegate
-            {
-                Installing.Hide();
-            });           
+            GetFile().Wait();    
         }
 
-        async Task GetFile()
+        private async Task GetFile()
         {               
             try
             {
@@ -75,6 +69,7 @@ namespace Timer_Application_Installer
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
                 wc.DownloadFile(download, fileName);
+                Update(1);
                 // Create a new instance of the WshShellClass
                 var wshShell = new WshShell();
 
@@ -88,10 +83,22 @@ namespace Timer_Application_Installer
                 shortcut.Save();
                 Update(1);
                 Console.WriteLine($"File downloaded: {fileName}");
+                
+                Thread.Sleep(1000);
+                Invoke((MethodInvoker)delegate
+                {
+                    FinishPanel.Show();
+                    Installing.Hide();
+                });
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+                Invoke((MethodInvoker)delegate
+                {
+                    ErrorPanel.Show();s
+                    Installing.Hide();
+                });
             }               
         }
 
