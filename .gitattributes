@@ -61,3 +61,6 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+Timer_Application_Installer export-ignore
+.git* export-ignore
+Timer_Application_Installer.sln export-ignore
