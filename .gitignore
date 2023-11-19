@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Timer_Application_Installer/Timer_Application_Installer.csproj
+/Timer_Application_Installer/Sensitive.cs
+/Timer_Application_Installer/Sensitive.cs
