@@ -52,8 +52,7 @@ namespace Timer_Application_Installer
             {
                 var httpContentClient = new HttpClient();
                 httpContentClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("TimerApplication", "1"));
-                httpContentClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Sensitive.GitHubToken);
-                var contentsUrl = $"https://api.github.com/repos/darynliebenberg/Timer/releases/latest";
+                var contentsUrl = $"https://api.github.com/repos/darynliebenberg/Timer-Resources/releases/latest";
                 Update(1);
                 var contentsJson = await httpContentClient.GetStringAsync(contentsUrl).ConfigureAwait(false);
                 Update(4);
@@ -63,7 +62,6 @@ namespace Timer_Application_Installer
 
                 WebClient wc = new WebClient();
                 wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36");
-                wc.Headers.Add(HttpRequestHeader.Authorization, $"token {Sensitive.GitHubToken}");
                 wc.Headers.Add(HttpRequestHeader.Accept, "application/octet-stream");
                 Update(1);
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -113,6 +111,11 @@ namespace Timer_Application_Installer
                 Process.Start(start);
             }
             Application.Exit();
-        }    
+        }
+
+        private void WebsiteLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/darynliebenberg/Timer-Resources/releases");
+        }
     }
 }

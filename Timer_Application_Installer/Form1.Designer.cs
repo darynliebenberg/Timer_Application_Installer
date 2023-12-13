@@ -40,9 +40,11 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.IconPictureBox = new System.Windows.Forms.PictureBox();
             this.ErrorPanel = new System.Windows.Forms.Panel();
+            this.ErrorPictureBox = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
-            this.ErrorPictureBox = new System.Windows.Forms.PictureBox();
+            this.AlternateLabel = new System.Windows.Forms.Label();
+            this.WebsiteLinkLabel = new System.Windows.Forms.LinkLabel();
             this.Installing.SuspendLayout();
             this.FinishPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -155,6 +157,8 @@
             // 
             // ErrorPanel
             // 
+            this.ErrorPanel.Controls.Add(this.WebsiteLinkLabel);
+            this.ErrorPanel.Controls.Add(this.AlternateLabel);
             this.ErrorPanel.Controls.Add(this.ErrorPictureBox);
             this.ErrorPanel.Controls.Add(this.CloseButton);
             this.ErrorPanel.Controls.Add(this.ErrorLabel);
@@ -164,6 +168,16 @@
             this.ErrorPanel.Size = new System.Drawing.Size(476, 187);
             this.ErrorPanel.TabIndex = 4;
             this.ErrorPanel.Visible = false;
+            // 
+            // ErrorPictureBox
+            // 
+            this.ErrorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ErrorPictureBox.Image")));
+            this.ErrorPictureBox.Location = new System.Drawing.Point(37, 52);
+            this.ErrorPictureBox.Name = "ErrorPictureBox";
+            this.ErrorPictureBox.Size = new System.Drawing.Size(60, 60);
+            this.ErrorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ErrorPictureBox.TabIndex = 5;
+            this.ErrorPictureBox.TabStop = false;
             // 
             // CloseButton
             // 
@@ -183,15 +197,27 @@
             this.ErrorLabel.TabIndex = 2;
             this.ErrorLabel.Text = "Unfortunately something went wrong. Please try again later.";
             // 
-            // ErrorPictureBox
+            // AlternateLabel
             // 
-            this.ErrorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ErrorPictureBox.Image")));
-            this.ErrorPictureBox.Location = new System.Drawing.Point(37, 52);
-            this.ErrorPictureBox.Name = "ErrorPictureBox";
-            this.ErrorPictureBox.Size = new System.Drawing.Size(60, 60);
-            this.ErrorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ErrorPictureBox.TabIndex = 5;
-            this.ErrorPictureBox.TabStop = false;
+            this.AlternateLabel.AutoSize = true;
+            this.AlternateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlternateLabel.Location = new System.Drawing.Point(34, 154);
+            this.AlternateLabel.Name = "AlternateLabel";
+            this.AlternateLabel.Size = new System.Drawing.Size(220, 16);
+            this.AlternateLabel.TabIndex = 6;
+            this.AlternateLabel.Text = "Alternatively, download directly from";
+            // 
+            // WebsiteLinkLabel
+            // 
+            this.WebsiteLinkLabel.AutoSize = true;
+            this.WebsiteLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebsiteLinkLabel.Location = new System.Drawing.Point(251, 154);
+            this.WebsiteLinkLabel.Name = "WebsiteLinkLabel";
+            this.WebsiteLinkLabel.Size = new System.Drawing.Size(53, 16);
+            this.WebsiteLinkLabel.TabIndex = 7;
+            this.WebsiteLinkLabel.TabStop = true;
+            this.WebsiteLinkLabel.Text = "website";
+            this.WebsiteLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WebsiteLinkLabel_LinkClicked);
             // 
             // Installer
             // 
@@ -216,6 +242,7 @@
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).EndInit();
             this.ErrorPanel.ResumeLayout(false);
+            this.ErrorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -237,6 +264,8 @@
         private System.Windows.Forms.PictureBox ErrorPictureBox;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.LinkLabel WebsiteLinkLabel;
+        private System.Windows.Forms.Label AlternateLabel;
     }
 }
 
