@@ -40,11 +40,11 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.IconPictureBox = new System.Windows.Forms.PictureBox();
             this.ErrorPanel = new System.Windows.Forms.Panel();
+            this.WebsiteLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.AlternateLabel = new System.Windows.Forms.Label();
             this.ErrorPictureBox = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
-            this.AlternateLabel = new System.Windows.Forms.Label();
-            this.WebsiteLinkLabel = new System.Windows.Forms.LinkLabel();
             this.Installing.SuspendLayout();
             this.FinishPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -169,6 +169,28 @@
             this.ErrorPanel.TabIndex = 4;
             this.ErrorPanel.Visible = false;
             // 
+            // WebsiteLinkLabel
+            // 
+            this.WebsiteLinkLabel.AutoSize = true;
+            this.WebsiteLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebsiteLinkLabel.Location = new System.Drawing.Point(251, 154);
+            this.WebsiteLinkLabel.Name = "WebsiteLinkLabel";
+            this.WebsiteLinkLabel.Size = new System.Drawing.Size(53, 16);
+            this.WebsiteLinkLabel.TabIndex = 7;
+            this.WebsiteLinkLabel.TabStop = true;
+            this.WebsiteLinkLabel.Text = "website";
+            this.WebsiteLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WebsiteLinkLabel_LinkClicked);
+            // 
+            // AlternateLabel
+            // 
+            this.AlternateLabel.AutoSize = true;
+            this.AlternateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlternateLabel.Location = new System.Drawing.Point(34, 154);
+            this.AlternateLabel.Name = "AlternateLabel";
+            this.AlternateLabel.Size = new System.Drawing.Size(220, 16);
+            this.AlternateLabel.TabIndex = 6;
+            this.AlternateLabel.Text = "Alternatively, download directly from";
+            // 
             // ErrorPictureBox
             // 
             this.ErrorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ErrorPictureBox.Image")));
@@ -187,6 +209,7 @@
             this.CloseButton.TabIndex = 4;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ErrorLabel
             // 
@@ -196,28 +219,6 @@
             this.ErrorLabel.Size = new System.Drawing.Size(274, 48);
             this.ErrorLabel.TabIndex = 2;
             this.ErrorLabel.Text = "Unfortunately something went wrong. Please try again later.";
-            // 
-            // AlternateLabel
-            // 
-            this.AlternateLabel.AutoSize = true;
-            this.AlternateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlternateLabel.Location = new System.Drawing.Point(34, 154);
-            this.AlternateLabel.Name = "AlternateLabel";
-            this.AlternateLabel.Size = new System.Drawing.Size(220, 16);
-            this.AlternateLabel.TabIndex = 6;
-            this.AlternateLabel.Text = "Alternatively, download directly from";
-            // 
-            // WebsiteLinkLabel
-            // 
-            this.WebsiteLinkLabel.AutoSize = true;
-            this.WebsiteLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebsiteLinkLabel.Location = new System.Drawing.Point(251, 154);
-            this.WebsiteLinkLabel.Name = "WebsiteLinkLabel";
-            this.WebsiteLinkLabel.Size = new System.Drawing.Size(53, 16);
-            this.WebsiteLinkLabel.TabIndex = 7;
-            this.WebsiteLinkLabel.TabStop = true;
-            this.WebsiteLinkLabel.Text = "website";
-            this.WebsiteLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WebsiteLinkLabel_LinkClicked);
             // 
             // Installer
             // 

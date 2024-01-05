@@ -117,5 +117,10 @@ namespace Timer_Application_Installer
         {
             Process.Start("https://github.com/darynliebenberg/Timer-Resources/releases");
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
